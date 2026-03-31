@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <h2 class="text-success">Congratulations!</h2>
+
+    <div class="alert alert-success">
+        Your Score: {{ grade }}%
+    </div>
+
+    <p><strong>Exam Result: Passed</strong></p>
+
+    <ul>
+        {% for choice in choices %}
+            <li>
+                {{ choice.question.content }} :
+                {% if choice.is_correct %}
+                    <span class="text-success">Correct</span>
+                {% else %}
+                    <span class="text-danger">Wrong</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+</body>
+</html>
